@@ -39,28 +39,34 @@ body {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 300px;
-  height: 300px;
+  /* width: 300px;
+  height: 300px; */
+}
+
+.slide-height {
+  height: 300px !important;
+}
+
+@media (max-width: 767px) {
+  .slide-height {
+    height: 150px !important;
+  }
 }
 
 .swiper-slide img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
+  width: 200px;
+  /* height: auto; */
 }
 
 .slide {
   width: 200px;
   height: auto;
 }
-
+/* 
 .swiper-slide img {
   display: block;
   width: 100%;
-}
+} */
 
 .swiper-pagination-bullet {
   background-color: white;

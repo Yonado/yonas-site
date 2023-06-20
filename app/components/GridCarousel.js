@@ -59,8 +59,9 @@ import Link from "next/link"; // Import the Link component from Next.js
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
+import "../swiper-bundle.css";
+// import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
@@ -112,12 +113,12 @@ const GridCarousel = () => {
         {projects.map((project) => (
           <SwiperSlide
             key={project.slug}
-            className={`border-2 relative flex justify-center items-center overflow-hidden group hover:bg-[#272727] transition-all transform bg-blend-overlay `}
+            className={`border-2 relative flex justify-center items-center overflow-hidden group hover:bg-[#272727] transition-all transform bg-blend-overlay  slide-height `}
             style={{ backgroundImage: `url(${project.mainImage})` }}
           >
             <Link href={`/projects/${project.slug}`} projects={projects}>
               {/* Wrap the content inside the SwiperSlide with the Link component */}
-              {project.title}
+              <div className="p-4">{project.title}</div>
               <div className="absolute bottom-0 md:translate-y-10 md:group-hover:translate-y-0 transform duration-100 left-0 w-full text-center p-3 bg-gray-800 bg-opacity-75">
                 {project.thoughts}
               </div>

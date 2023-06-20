@@ -4,6 +4,7 @@ import VideoHeader from "./components/VideoHeader";
 import GridCarousel from "./components/GridCarousel";
 import React, { Suspense } from "react";
 import Loading from "./loading";
+import "./swiper-bundle.css";
 
 export default function Home() {
   return (
@@ -24,16 +25,16 @@ export default function Home() {
             rhoncus nibh. Etiam egestas aliquet turpis, quis iaculis eros
             blandit nec.
           </div>
-          <div className="w-[100%] flex col-span-2 p-4 md:p-0">
+          <div className="w-[100%] flex col-span-2 p-4 md:p-0 mb-10">
             <GridCarousel />
           </div>
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="w-[100%] z-0">
+        <div className="w-full">
           <Carousel />
         </div>
-        <div className="font-['Playfair_Display'] text-[100px] leading-[80px] lg:text-[180px] lg:leading-[140px] lg:ml-[-130px] lg:mt-[-140px] z-50 md:text-[#ffffff85] md:hover:text-[#ffffff] transition-all transform duration-200  group">
+        <div className="mt-[-160px] md:m-0 font-['Playfair_Display'] text-[100px] leading-[80px] lg:text-[180px] lg:leading-[140px] lg:ml-[-130px] lg:mt-[-140px] z-50 md:text-[#ffffff85] md:hover:text-[#ffffff] transition-all transform duration-200  group">
           <a href="/gallery" className="">
             D<br></br>ESIGN
           </a>
