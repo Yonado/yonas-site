@@ -125,14 +125,14 @@ export default function Project({ params }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      { params: { slug: "project-1" } },
-      { params: { slug: "project-2" } },
-      { params: { slug: "project-3" } },
-      // Add more valid slugs as needed
-    ],
-    fallback: false, // Set to true if you have additional dynamic slugs
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [
+//       { params: { slug: "project-1" } },
+//       { params: { slug: "project-2" } },
+//       { params: { slug: "project-3" } },
+//       // Add more valid slugs as needed
+//     ],
+//     fallback: false, // Set to true if you have additional dynamic slugs
+//   };
+// }

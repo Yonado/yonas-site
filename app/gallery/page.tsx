@@ -46,6 +46,11 @@ type Image = {
   src: string;
   likesCount: number;
 };
+
+interface GalleryProps {
+  images: Image[];
+}
+
 async function fetchLikesForImage(imageId: number): Promise<number | null> {
   try {
     const { data, error } = await supabase
@@ -104,7 +109,7 @@ async function fetchData() {
   return fetchedImages;
 }
 
-export default function Gallery({ images }: { images: Image[] }) {
+export default function Gallery() {
   const [fetchedImages, setFetchedImages] = useState<Image[]>([]);
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
   const selectedImageRef = useRef<HTMLDivElement>(null);
@@ -333,3 +338,5 @@ function BlurImage({
     </div>
   );
 }
+export type { GalleryProps };
+export type { Image };
