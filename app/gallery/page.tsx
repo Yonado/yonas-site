@@ -6,6 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import supabase from "./../utils/supabase";
 import SelectedImageModal from "../components/SelectedImageModal";
 import Loading from "../components/loadingComponent";
+import { Grid } from "react-loader-spinner";
 
 const heartSvg = (
   <svg
@@ -125,6 +126,7 @@ export default function Gallery() {
   // Call the fetchData function directly when the component is rendered
   useEffect(() => {
     fetchData().then((fetchedImages) => {
+      setLoading(true);
       const transformedImages = fetchedImages.map((item) => ({
         id: parseInt(item.id, 10), // Convert id to a number using parseInt
         name: item.name,
@@ -135,6 +137,7 @@ export default function Gallery() {
         created_at: "", // Add created_at property if applicable
       }));
       setFetchedImages(transformedImages);
+      setLoading(false);
     });
   }, []);
 
@@ -170,26 +173,37 @@ export default function Gallery() {
 
   return (
     <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-      {/* {loading ? (
-        <Loading />
-      ) : ( */}
-      <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 select-none">
-        {fetchedImages.map((image) => (
-          <div key={image.id} className="cursor-pointer">
-            <BlurImage
-              image={image}
-              // onLikeUpdate={handleLikeUpdate}
-              handleClickImage={handleClickImage}
-              selectedImageLikes={selectedImageLikes}
-              setSelectedImageLikes={setSelectedImageLikes}
-              likesCount={image.likesCount}
-              selectedImageRef={selectedImageRef}
-              selectedImage={selectedImage}
-            />
-          </div>
-        ))}
-      </div>
-      {/* )} */}
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <Grid
+            height="80"
+            width="80"
+            color="#ffffff"
+            ariaLabel="grid-loading"
+            radius="12.5"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 select-none">
+          {fetchedImages.map((image) => (
+            <div key={image.id} className="cursor-pointer">
+              <BlurImage
+                image={image}
+                // onLikeUpdate={handleLikeUpdate}
+                handleClickImage={handleClickImage}
+                selectedImageLikes={selectedImageLikes}
+                setSelectedImageLikes={setSelectedImageLikes}
+                likesCount={image.likesCount}
+                selectedImageRef={selectedImageRef}
+                selectedImage={selectedImage}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
