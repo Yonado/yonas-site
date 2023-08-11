@@ -20,10 +20,14 @@ export default function Home() {
             First, solve the problem.
           </div>
           <div className="text-[16px] leading-[140%] md:text-[32px] md:leading-[90%] font-sans font-thin">
-            Phasellus pretium dolor ac risus varius tincidunt. Cras lacinia
-            efficitur efficitur. Suspendisse quis fringilla libero, tempor
-            rhoncus nibh. Etiam egestas aliquet turpis, quis iaculis eros
-            blandit nec.
+            As an enthusiast of AI and design, I embrace the opportunity to find
+            clever solutions. With a sprinkle of creativity and a knack for
+            problem-solving, I delve into the world of coding, determined to
+            conquer any challenge. Carefully crafting each line, I merge the
+            beauty of design with the potential of AI, creating a solution that
+            seamlessly combines functionality and visual appeal. So, rest
+            assured, my friend, together we'll embark on this coding adventure,
+            transforming obstacles into exciting opportunities for innovation.
           </div>
           <div className="w-[100%] flex col-span-2 p-4 md:p-0 mb-10">
             <GridCarousel />
@@ -32,7 +36,9 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center">
         <div className="w-full">
-          <Carousel />
+          <a href="/gallery" className="">
+            <Carousel />
+          </a>
         </div>
         <div className="mt-[-160px] md:m-0 font-['Playfair_Display'] text-[100px] leading-[80px] lg:text-[180px] lg:leading-[140px] lg:ml-[-130px] lg:mt-[-140px] z-50 md:text-[#ffffff85] md:hover:text-[#ffffff] transition-all transform duration-200  group">
           <a href="/gallery" className="">

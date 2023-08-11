@@ -78,19 +78,28 @@ const GridCarousel = () => {
     },
     {
       slug: "project-2",
+      title: "Reroom",
+      objectives: "Exploring the AI and it's possibilities.",
+      thoughts:
+        "The AI revolution will change the world. But how? This might be one way.",
+      mainImage: "",
+    },
+    {
+      slug: "project-3",
       title: "The Jewish Project",
       objectives: "Exploring the AI and it's possibilities.",
       thoughts: "How would an AI Rabbi answer?",
       mainImage: "/mockups/jewish1.png",
     },
     {
-      slug: "project-3",
-      title: "Project 3",
+      slug: "project-4",
+      title: "Segal Demo Site",
       objectives:
         "Using a database to display different items, making a responsive design.",
       thoughts: "From wine to design, an exploration of Segal.",
       mainImage: "/mockups/segal1.png",
     },
+
     // Add more projects as needed
   ];
 

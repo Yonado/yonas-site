@@ -69,6 +69,17 @@ export default function Project({ params }) {
         "/mockups/segal3-m.png",
       ],
     },
+    {
+      slug: "project-4",
+      link: "https://reroom.co.il/",
+      title: "Reroom",
+      objectives:
+        "Playing with the new AI technologies to see where it gets us. This time I wanted to make a simple and intuitive UI for users to remodel their rooms easily.",
+      thoughts:
+        "This was a rather easy project, as I used levelsio's github to begin with. But it also challenged me t make the credit and login system, as well as connecting Supabase and Google Auth.",
+      mainImage: "",
+      images: [],
+    },
   ];
 
   const project = projects.find((project) => project.slug === slug);
