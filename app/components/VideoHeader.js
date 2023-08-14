@@ -7,7 +7,11 @@ const VideoHeader = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    const videoSources = ["whitesmoke.mp4", "smoke.mp4", "jellyfish.mp4"];
+    const videoSources = [
+      "bluesmoke (1).mp4",
+      "fire2 (1) (1).mp4",
+      "jellyfish (1) (1).mp4",
+    ];
     const randomIndex = Math.floor(Math.random() * videoSources.length);
     const randomSource = videoSources[randomIndex];
     setVideoSrc(randomSource);
